@@ -27,6 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application definition
+TOKEN_BOT = '6785241773:AAHfVEg2Ve_up0F_mwrV8ncx_K6fyi7uQLg'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -35,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users'
+    'users',
+    'bot'
 ]
 
 MIDDLEWARE = [
