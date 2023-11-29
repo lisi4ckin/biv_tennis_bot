@@ -15,7 +15,7 @@ class User(models.Model):
                                    primary_key=False, blank=True, null=True)
 
     def __str__(self):
-        return self.username
+        return self.username + " " + str(self.profile.user_rating)
 
     class Meta:
         db_table = 'tennis_users'

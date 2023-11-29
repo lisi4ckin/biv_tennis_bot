@@ -14,5 +14,12 @@ class UserService:
             raise ValueError("Ошибка! Пользователь уже зарегистрирован в системе")
 
     @staticmethod
-    def get_all_tennis_users() -> list:
-        return User.objects.all().filter('profile.user_rating')
+    def get_all_tennis_users(user_chat_id: str) -> list:
+        users = User.objects.all().order_by('profile__user_rating').reverse() \
+            if user_chat_id is None \
+            else User.objects.filter(profile__user_telegram_chat_id=user_chat_id)
+        return users
+
+    @staticmethod
+    def update_user_rating(coefficient: int, user_id: int, winning: bool):
+        pass
